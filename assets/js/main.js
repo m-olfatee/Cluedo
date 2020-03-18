@@ -95,7 +95,7 @@ let Weapons = [
 let Rooms = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge", "Ballroom", "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"];
 
 function random() {
-
+    document.getElementById("show-info").innerHTML = "";
     let x = Math.floor(Math.random() * Suspects.length);
     let y = Math.floor(Math.random() * Weapons.length);
     let z = Math.floor(Math.random() * Rooms.length);
