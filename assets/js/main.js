@@ -94,47 +94,47 @@ let Weapons = [
 ]
 let Rooms = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge", "Ballroom", "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"];
 
-function random() {
-    document.getElementById("show-info").innerHTML = "";
-    let x = Math.floor(Math.random() * Suspects.length);
-    let y = Math.floor(Math.random() * Weapons.length);
-    let z = Math.floor(Math.random() * Rooms.length);
-    document.getElementById("image").src = Suspects[x].image;
-    document.getElementById("show-info").innerHTML += (`Name: ${Suspects[x].firstName} ${Suspects[x].lastName} <br>`);
-    document.getElementById("show-info").innerHTML += (`Room: ${Rooms[z]} <br>`);
-    document.getElementById("show-info").innerHTML += (`Weapon is: ${Weapons[y].name} <br>`);
-}
+// function random() {
+//     document.getElementById("show-info").innerHTML = "";
+//     let x = Math.floor(Math.random() * Suspects.length);
+//     let y = Math.floor(Math.random() * Weapons.length);
+//     let z = Math.floor(Math.random() * Rooms.length);
+//     document.getElementById("image").src = Suspects[x].image;
+//     document.getElementById("show-info").innerHTML += (`Name: ${Suspects[x].firstName} ${Suspects[x].lastName} <br>`);
+//     document.getElementById("show-info").innerHTML += (`Room: ${Rooms[z]} <br>`);
+//     document.getElementById("show-info").innerHTML += (`Weapon is: ${Weapons[y].name} <br>`);
+// }
 
 
-function selectRandom(arr) {
-    //console.log(Math.floor(Math.random() * arr.length)) //index
-    return arr[Math.floor(Math.random() * arr.length)] //arr[index]
-}
-//let arr = ["a", "b", "c", "d", "e"]
-//console.log(selectRandom(arr))
+// function selectRandom(arr) {
+//     //console.log(Math.floor(Math.random() * arr.length)) //index
+//     return arr[Math.floor(Math.random() * arr.length)] //arr[index]
+// }
+// //let arr = ["a", "b", "c", "d", "e"]
+// //console.log(selectRandom(arr))
 
-function pickMistery() {
-    let mistery = {};
-    // suspect + weapons + rooms
-    mistery.suspect = selectRandom(suspectsArray);
-    mistery.weapons = selectRandom(weaponsArray)
-    mistery.rooms = selectRandom(roomsArray)
-    return mistery
-}
-//console.log(pickMistery())
-function revealMistery() {
-    let revealedMistery = pickMistery()
-    console.log(revealedMistery)
-    document.getElementById("result").innerHTML = `
-    <figure>
-    <img src=${revealedMistery.suspect.image} alt="" style="width:200px">
-    <figcaption>
-        <h2>name: ${revealedMistery.suspect.firstName} ${revealedMistery.suspect.lastName}</h2>
-        <h3>rooms: ${revealedMistery.rooms.name}</h3>
-        <h3>weapons: ${revealedMistery.weapons.name}</h3>
-    </figcaption>
-    </figure>`
-}
+// function pickMistery() {
+//     let mistery = {};
+//     // suspect + weapons + rooms
+//     mistery.suspect = selectRandom(suspectsArray);
+//     mistery.weapons = selectRandom(weaponsArray)
+//     mistery.rooms = selectRandom(roomsArray)
+//     return mistery
+// }
+// //console.log(pickMistery())
+// function revealMistery() {
+//     let revealedMistery = pickMistery()
+//     console.log(revealedMistery)
+//     document.getElementById("result").innerHTML = `
+//     <figure>
+//     <img src=${revealedMistery.suspect.image} alt="" style="width:200px">
+//     <figcaption>
+//         <h2>name: ${revealedMistery.suspect.firstName} ${revealedMistery.suspect.lastName}</h2>
+//         <h3>rooms: ${revealedMistery.rooms.name}</h3>
+//         <h3>weapons: ${revealedMistery.weapons.name}</h3>
+//     </figcaption>
+//     </figure>`
+// }
 
 function calculate() {
     var slim = document.getElementById("slim").checked;
