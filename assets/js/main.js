@@ -106,6 +106,48 @@ function random() {
 }
 
 
+function selectRandom(arr) {
+    //console.log(Math.floor(Math.random() * arr.length)) //index
+    return arr[Math.floor(Math.random() * arr.length)] //arr[index]
+}
+//let arr = ["a", "b", "c", "d", "e"]
+//console.log(selectRandom(arr))
 
+function pickMistery() {
+    let mistery = {};
+    // suspect + weapons + rooms
+    mistery.suspect = selectRandom(suspectsArray);
+    mistery.weapons = selectRandom(weaponsArray)
+    mistery.rooms = selectRandom(roomsArray)
+    return mistery
+}
+//console.log(pickMistery())
+function revealMistery() {
+    let revealedMistery = pickMistery()
+    console.log(revealedMistery)
+    document.getElementById("result").innerHTML = `
+    <figure>
+    <img src=${revealedMistery.suspect.image} alt="" style="width:200px">
+    <figcaption>
+        <h2>name: ${revealedMistery.suspect.firstName} ${revealedMistery.suspect.lastName}</h2>
+        <h3>rooms: ${revealedMistery.rooms.name}</h3>
+        <h3>weapons: ${revealedMistery.weapons.name}</h3>
+    </figcaption>
+    </figure>`
+}
 
+function calculate() {
+    var slim = document.getElementById("slim").checked;
+    var normal = document.getElementById("normal").checked;
+    var H = document.getElementById("body-height").value;
+    var A = document.getElementById("person-age").value;
+    if (slim === true) {
+        var x = eval((H - 100) + (A / 10) * 0.9 * 0.9);
+        console.log(x);
+
+    } else if (normal === true) {
+        var x = eval((H - 100) + (A / 10) * 0.9 * 1.1);
+        console.log(x);
+    }
+}
 
